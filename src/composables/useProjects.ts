@@ -13,7 +13,7 @@ export function useProjects() {
       }
 
       try {
-        const { data }: AxiosResponse = await axios.get('https://personalport-be.herokuapp.com/projectsz')
+        const { data }: AxiosResponse = await axios.get('https://personalport-be.herokuapp.com/projects')
         request.data = data
       }
       catch (err: AxiosError | unknown) {
