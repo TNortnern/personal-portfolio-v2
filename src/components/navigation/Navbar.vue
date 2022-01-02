@@ -24,7 +24,7 @@
 import { useEventListener } from '~/composables/useEventListener'
 const navbar = ref<any>(null)
 const active = ref(false)
-if (!typeof window === 'undefined') {
+if (typeof window !== 'undefined') {
   useEventListener(window, 'scroll', () => {
     // have we scrolled past this element?
     if (window.scrollY > navbar.value.offsetTop + navbar.value.offsetHeight)
