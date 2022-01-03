@@ -19,8 +19,8 @@
           class="group relative opacity-80 hover:opacity-100 duration-150"
         >
           <!-- {{ project.media }} -->
-          <img
-            :src="project.media && project.media[0] && project.media[0].url"
+          <nuxt-img
+            :src="project.media && project.media[0] && project.media[0].url || 'http://placeimg.com/640/480/city'"
             alt="proj"
             class="w-full h-full object-cover"
           />

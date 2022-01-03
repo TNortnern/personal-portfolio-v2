@@ -38,7 +38,13 @@ export default {
     '@nuxtjs/composition-api/module',
     'unplugin-vue2-script-setup/nuxt',
     'nuxt-windicss',
+    '@nuxt/image',
   ],
+  image: {
+    domains: [
+      'https://store-files-personal.s3.amazonaws.com',
+    ],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [

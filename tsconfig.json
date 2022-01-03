@@ -15,7 +15,7 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "unplugin-vue2-script-setup/types"],
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "unplugin-vue2-script-setup/types", "@nuxt/image"],
   },
    "vueCompilerOptions": {
     "experimentalCompatMode": 2

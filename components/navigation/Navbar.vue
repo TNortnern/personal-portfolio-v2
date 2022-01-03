@@ -1,5 +1,4 @@
 <template>
-  <client-only>
     <div
       class="py-12 z-20 fixed top-0 w-full bg-app-dark-blue duration-250"
       :class="{
@@ -9,7 +8,7 @@
       <nav ref="navbar" class="main-container">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <img class="rounded-full w-12 h-12" src="/mainavatar.jpg" alt="human">
+            <nuxt-img class="rounded-full w-12 h-12" src="/mainavatar.jpg" alt="human" />
             <p>Trayvon Northern</p>
           </div>
           <ul class="flex items-center gap-4">
@@ -20,7 +19,6 @@
         </div>
       </nav>
     </div>
-  </client-only>
 </template>
 
 <script lang="ts" setup>
