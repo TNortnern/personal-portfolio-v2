@@ -1,7 +1,9 @@
 // register vue composition api globally
+import devalue from '@nuxt/devalue'
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
 // windicss layers
@@ -13,7 +15,6 @@ import './styles/main.css'
 import 'virtual:windi-utilities.css'
 // windicss devtools support (dev only)
 import 'virtual:windi-devtools'
-import { useProjects } from './composables/useProjects'
 
 const routes = setupLayouts(generatedRoutes)
 
@@ -22,15 +23,11 @@ export const createApp = ViteSSG(
   App,
   { routes, base: import.meta.env.BASE_URL },
   async(ctx) => {
-    const { initialState } = ctx
-    const { fetch } = useProjects()
-    const { data } = await fetch()
-    initialState.pinia = {
-      projects: {
-        all: data || [],
-      },
-    }
-    // install all modules under `modules/`
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
+  },
+  {
+    transformState(state) {
+      return import.meta.env.SSR ? devalue(state) : state
+    },
   },
 )

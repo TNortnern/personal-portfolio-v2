@@ -13,7 +13,7 @@
         </button>
       </div>
       <div class="grid grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16">
-        <div v-for="project of projects" :key="project.id">
+        <div v-for="project of store.all" :key="project.id">
           items
         </div>
       </div>
@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { useProjectStore } from '~/stores/projects'
-const projects = useProjectStore().$state.all
+const store = useProjectStore()
 // import {  } from 'pinia'
 const activeItem = ref(1)
 const tabs = [
