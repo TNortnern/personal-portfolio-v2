@@ -10,7 +10,7 @@
     caption="Testimonials"
     title="See what people say about me"
   >
-    <div class="mt-16 grid grid-cols-3 gap-x-8 gap-y-5">
+    <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-5">
       <a
         v-for="i in 6"
         :key="i"

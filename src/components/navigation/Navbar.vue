@@ -10,7 +10,7 @@
           <img :class="active ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
           <p>Trayvon Northern</p>
         </router-link>
-        <ul class="flex items-center gap-4">
+        <ul class="lg:(flex items-center gap-4) hidden">
           <li v-for="route in routes" :key="route.text" class="group">
             <a
               v-smooth-scroll

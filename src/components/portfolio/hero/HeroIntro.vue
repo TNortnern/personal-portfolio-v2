@@ -1,6 +1,6 @@
 <template>
   <div class="main-container pt-36">
-    <div>
+    <div class="text-center md:text-left">
       <h1 class="text-app-light-blue text-lg mb-2 uppercase">
         Hello my name is Trayvon
       </h1>
