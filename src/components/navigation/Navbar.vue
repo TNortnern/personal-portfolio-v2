@@ -6,10 +6,10 @@
   >
     <nav ref="navbar" class="main-container">
       <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
+        <router-link to="/" class="flex items-center gap-2">
           <img :class="active ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
           <p>Trayvon Northern</p>
-        </div>
+        </router-link>
         <ul class="flex items-center gap-4">
           <li v-for="route in routes" :key="route.text" class="group">
             <a
