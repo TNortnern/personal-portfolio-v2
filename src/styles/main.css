@@ -46,5 +46,16 @@ html.dark {
 }
 
 .main-container {
-  @apply max-w-6xl mx-auto px-4 md:px-8 2xl:px-0;
+  @apply max-w-7xl mx-auto px-4 md:px-8 2xl:px-0;
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition-duration: 0.25s;
+  transition-property: opacity;
+  transition-timing-function: ease-in;
+}
+.page-fade-enter-from,
+.page-fade-leave-active {
+  opacity: 0;
 }

@@ -1,32 +1,34 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { useProjects } from '~/composables/useProjects'
 
-// export const useProjectStore = defineStore('projects', () => {
-//   const state = () => {
-//     return {
-//       // all these properties will have their type inferred automatically
-//       counter: 0,
-//       name: 'Eduardo',
-//       isAdmin: true,
-//       all: [],
-//     }
-//   }
-//   const all = ref([])
-//   const initialize = async() => {
-//     const { fetch } = useProjects()
-//     const { data } = await fetch()
-//     all.value = data
-//     state().all = data
-//   }
-//   return {
-//     state,
-//     initialize,
-//     all: all.value,
-//   }
-// })
+interface Media {
+  id: string
+  url: string
+}
 
+interface Role {
+  id: string
+  name: string
+}
+interface Technology {
+  id: string
+  name: string
+  image?: Media
+}
+export interface Project {
+  id: string
+  title: string
+  description: string
+  media: Media[]
+  roles: Role[]
+  isActive: boolean
+  importance: number
+  createdAt: Date
+  hosted_url: string
+  technologies: Technology[]
+}
 interface RootState {
-  all: any
+  all: Project[]
 }
 
 export const useProjectStore = defineStore({
@@ -34,6 +36,11 @@ export const useProjectStore = defineStore({
   state: (): RootState => ({
     all: [],
   }),
+  getters: {
+    getProject: (state: RootState) => {
+      return (id: string) => state.all.find(p => p.id === id)
+    },
+  },
   actions: {
     async initialize() {
       const { fetch } = useProjects()

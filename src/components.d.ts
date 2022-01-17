@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    FullScreenLoader: typeof import('./components/misc/FullScreenLoader.vue')['default']
     Hero: typeof import('./components/hero/Hero.vue')['default']
     HeroIntro: typeof import('./components/hero/HeroIntro.vue')['default']
     Navbar: typeof import('./components/navigation/Navbar.vue')['default']
