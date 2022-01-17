@@ -7,6 +7,8 @@ import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { createPinia } from 'pinia'
+import VueLazyLoad from 'vue3-lazyload'
+
 import App from './App.vue'
 
 // windicss layers
@@ -30,6 +32,7 @@ export const createApp = ViteSSG(
     app.use(VGenericForm)
     app.use(VueSmoothScroll)
     app.use(VueObserveVisibility)
+    app.use(VueLazyLoad)
     // if (isClient) {
     //   app.use(AOS.init({
     //     once: true,

@@ -29,8 +29,8 @@
         class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
       >
         <img
+          v-lazy="{src: project?.media?.[0]?.url}"
           class="w-full h-100 object-cover"
-          :src="project?.media?.[0]?.url"
           :alt="project.title"
           :title="project.title"
         >
