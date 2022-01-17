@@ -1,13 +1,6 @@
 <template>
   <div class="main-container pt-32 pb-28">
-    <div class="text-center">
-      <h4 class="text-app-light-blue text-xl font-bold">
-        {{ caption }}
-      </h4>
-      <h2 class="text-5xl">
-        {{ title }}
-      </h2>
-    </div>
+    <SectionHeader :title="title" :caption="caption" />
     <slot />
   </div>
 </template>
