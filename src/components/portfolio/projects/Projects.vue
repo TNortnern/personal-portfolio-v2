@@ -22,7 +22,7 @@
       </button>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16">
-      <!-- <router-link
+      <router-link
         v-for="project of all"
         :key="project.id"
         :to="`/projects/${project.id}`"
@@ -41,7 +41,7 @@
             {{ project.title }}
           </h1>
         </div>
-      </router-link> -->
+      </router-link>
     </div>
   </SectionBlock>
 </template>
