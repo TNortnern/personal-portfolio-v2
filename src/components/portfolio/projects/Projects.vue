@@ -29,7 +29,7 @@
         class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
       >
         <img
-          v-lazy="{src: project?.media?.[0]?.url}"
+          v-lazy="{ src: project?.media?.[0]?.url }"
           class="w-full h-100 object-cover"
           :alt="project.title"
           :title="project.title"
@@ -60,3 +60,16 @@ const tabs: Tab[] = [
   'package',
 ]
 </script>
+
+<style>
+img {
+  @apply duration-300;
+}
+img[lazy="loading"] {
+  @apply bg-black opacity-65;
+}
+img[lazy="loaded"] {
+  @apply opacity-100;
+  /*your style here*/
+}
+</style>
