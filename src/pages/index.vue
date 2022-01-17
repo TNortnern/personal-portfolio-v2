@@ -1,40 +1,32 @@
 <template>
-  <div class="">
+  <div>
     <Hero />
     <Services />
-    <SectionBlock caption="Portfolio" title="My Works">
-      <div class="flex justify-center text-lg gap-6 mt-16">
-        <button
-          v-for="(tab, i) in tabs" :key="i" class="rounded-full py-2.5 w-30 duration-150 capitalize"
-          :class="activeItem === i ? 'bg-app-light-blue text-white' : 'text-gray-400 hover:(bg-app-light-blue text-white bg-opacity-75)'"
-          @click="activeItem = i"
-        >
-          {{ tab }}
-        </button>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16">
-        <router-link v-for="project of store.all" :key="project.id" :to="`/projects/${project.id}`" class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full">
-          <img class="w-full h-100 object-cover" :src="project?.media?.[0]?.url" :alt="project.title" :title="project.title">
-          <div class="bg-black text-white bg-opacity-70 absolute inset-0 h-full w-full flex justify-center items-center duration-200 opacity-0 group-hover:(opacity-100)">
-            <h1 class="text-4xl font-bold">
-              {{ project.title }}
-            </h1>
+    <Projects />
+    <SectionBlock caption="Testimonials" title="What my clients are saying">
+      <div class="mt-16">
+        <div class="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
+          <div class="w-full flex mb-4 items-center">
+            <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+              <img src="https://i.pravatar.cc/100?img=1" alt="">
+            </div>
+            <div class="flex-grow pl-3">
+              <h6 class="font-bold text-sm uppercase text-gray-600">
+                Kenzie Edgar.
+              </h6>
+            </div>
           </div>
-        </router-link>
+          <div class="w-full">
+            <p class="text-sm leading-tight">
+              <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sunt ratione dolor exercitationem minima quas itaque saepe quasi architecto vel! Accusantium, vero sint recusandae cum tempora nemo commodi soluta deleniti.<span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
+            </p>
+          </div>
+        </div>
       </div>
     </SectionBlock>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useProjectStore } from '~/stores/projects'
-const store = useProjectStore()
-// import {  } from 'pinia'
-const activeItem = ref(1)
-const tabs = [
-  'all',
-  'websites',
-  'design',
-  'mobile apps',
-]
+
 </script>
