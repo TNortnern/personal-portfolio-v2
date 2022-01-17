@@ -7,16 +7,17 @@ declare module 'vue' {
     AppFooter: typeof import('./components/footer/AppFooter.vue')['default']
     AppInput: typeof import('./components/common/AppInput.vue')['default']
     AppTextarea: typeof import('./components/common/AppTextarea.vue')['default']
-    Contact: typeof import('./components/contact/Contact.vue')['default']
+    Contact: typeof import('./components/portfolio/contact/Contact.vue')['default']
     FullScreenLoader: typeof import('./components/misc/FullScreenLoader.vue')['default']
-    Hero: typeof import('./components/hero/Hero.vue')['default']
-    HeroIntro: typeof import('./components/hero/HeroIntro.vue')['default']
+    Hero: typeof import('./components/portfolio/hero/Hero.vue')['default']
+    HeroIntro: typeof import('./components/portfolio/hero/HeroIntro.vue')['default']
     Navbar: typeof import('./components/navigation/Navbar.vue')['default']
-    Projects: typeof import('./components/projects/Projects.vue')['default']
+    Projects: typeof import('./components/portfolio/projects/Projects.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionBlock: typeof import('./components/common/SectionBlock.vue')['default']
     SectionHeader: typeof import('./components/common/SectionHeader.vue')['default']
-    Services: typeof import('./components/services/Services.vue')['default']
+    Services: typeof import('./components/portfolio/services/Services.vue')['default']
+    Testimonials: typeof import('./components/portfolio/testimonials/Testimonials.vue')['default']
   }
 }
 

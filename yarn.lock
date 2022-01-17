@@ -6355,6 +6355,13 @@ uuid@^8.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
+v-generic-form@^1.1.13:
+  version "1.1.13"
+  resolved "https://registry.yarnpkg.com/v-generic-form/-/v-generic-form-1.1.13.tgz#e6b67f9cbdf94288e293d4f1487a57f7b8115ac7"
+  integrity sha512-TtcsQpQzZsjaXH122ybTfqfU2NfZs+AHdAcb6C6ixjUhhWKUKVQ6h7y+XdzWHMIiRQYOlegmzCDhx+ZBFdZrgQ==
+  dependencies:
+    validate.js "^0.13.1"
+
 v8-compile-cache@^2.0.3:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
@@ -6367,6 +6374,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validate.js@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/validate.js/-/validate.js-0.13.1.tgz#b58bfac04a0f600a340f62e5227e70d95971e92a"
+  integrity sha512-PnFM3xiZ+kYmLyTiMgTYmU7ZHkjBZz2/+F0DaALc/uUtVzdCt1wAosvYJ5hFQi/hz8O4zb52FQhHZRC+uVkJ+g==
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"

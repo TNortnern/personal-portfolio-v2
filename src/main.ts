@@ -1,5 +1,6 @@
 // register vue composition api globally
 import devalue from '@nuxt/devalue'
+import VGenericForm from 'v-generic-form'
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -23,6 +24,8 @@ export const createApp = ViteSSG(
   App,
   { routes, base: import.meta.env.BASE_URL },
   async(ctx) => {
+    const { app } = ctx
+    app.use(VGenericForm)
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
   },
   {

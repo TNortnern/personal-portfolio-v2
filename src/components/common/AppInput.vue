@@ -6,7 +6,11 @@
         v-bind="{
           ...(autocomplete && { autocomplete })
         }"
-        :id="id || name" :type="type" :name="name" :value="modelValue" class="py-3 px-4 block w-full shadow-sm duration-200 focus:(ring-app-light-blue ring-4 border-app-light-blue) border-gray-300 rounded-md" @input="handleInput($event)"
+        :id="id || name"
+        :class="{
+          'border-red-600 ring-4 ring-red-400': error,
+          'focus:(ring-app-light-blue ring-4 border-app-light-blue) border-gray-300': !error
+        }" :type="type" :name="name" :value="modelValue" class="py-3 px-4 block w-full shadow-sm duration-200   rounded-md" @input="handleInput($event)"
       >
     </div>
   </div>
@@ -19,6 +23,7 @@ withDefaults(defineProps<{
   id: string
   name: string
   type?: string
+  error?: string
   autocomplete?: string
   modelValue?: string | number
 }>(), {

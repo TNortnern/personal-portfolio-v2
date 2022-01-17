@@ -1,18 +1,18 @@
 <template>
   <div
-    class="py-12 fixed z-20 top-0 w-full bg-app-dark-blue duration-250 text-white" :class="{
-      'shadow-2xl pt-4 pb-4 bg-white text-black': active
+    class="py-10 fixed  top-0 w-full bg-app-dark-blue duration-250 text-white" :class="{
+      'shadow-2xl pt-4 pb-4 bg-white text-black z-20': active
     }"
   >
     <nav ref="navbar" class="main-container">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
-          <img class="rounded-full w-12 h-12" src="/mainavatar.jpg" alt="human">
+          <img :class="active ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
           <p>Trayvon Northern</p>
         </div>
         <ul class="flex items-center gap-4">
-          <li v-for="i in 5" :key="i" class="group">
-            <a class="duration-150 group-hover:text-app-light-blue" href="">Link 0{{ i+1 }}</a>
+          <li v-for="(route, i) in routes" :key="route.text" class="group">
+            <a class="duration-150 group-hover:text-app-light-blue" href="">{{ route.text }}</a>
           </li>
         </ul>
       </div>
@@ -22,6 +22,8 @@
 
 <script lang="ts" setup>
 import { useEventListener } from '~/composables/useEventListener'
+import { useRouteStore } from '~/stores/routes'
+const { routes } = useRouteStore()
 const navbar = ref<any>(null)
 const active = ref(false)
 if (typeof window !== 'undefined') {
