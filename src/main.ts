@@ -1,6 +1,8 @@
 // register vue composition api globally
 import devalue from '@nuxt/devalue'
 import VGenericForm from 'v-generic-form'
+import VueSmoothScroll from 'vue3-smooth-scroll'
+import VueObserveVisibility from 'vue3-observe-visibility2'
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -26,6 +28,13 @@ export const createApp = ViteSSG(
   async(ctx) => {
     const { app } = ctx
     app.use(VGenericForm)
+    app.use(VueSmoothScroll)
+    app.use(VueObserveVisibility)
+    // if (isClient) {
+    //   app.use(AOS.init({
+    //     once: true,
+    //   }))
+    // }
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
   },
   {

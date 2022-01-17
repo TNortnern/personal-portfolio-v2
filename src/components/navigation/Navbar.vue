@@ -11,8 +11,11 @@
           <p>Trayvon Northern</p>
         </div>
         <ul class="flex items-center gap-4">
-          <li v-for="(route, i) in routes" :key="route.text" class="group">
-            <a class="duration-150 group-hover:text-app-light-blue" href="">{{ route.text }}</a>
+          <li v-for="route in routes" :key="route.text" class="group">
+            <a
+              v-smooth-scroll
+              class="duration-150 group-hover:text-app-light-blue" :href="route.href"
+            >{{ route.text }}</a>
           </li>
         </ul>
       </div>

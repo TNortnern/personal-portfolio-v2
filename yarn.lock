@@ -6672,6 +6672,16 @@ vue-tsc@^0.30.0:
     "@volar/shared" "0.30.1"
     vscode-vue-languageservice "0.30.1"
 
+vue3-observe-visibility2@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vue3-observe-visibility2/-/vue3-observe-visibility2-0.0.3.tgz#de8b494dd9002d815dab455ab859306a08c3a6a7"
+  integrity sha512-yJL0G5RrI/uXdDrs+0fdlk/dYKhKBRZtkwJO0ar44NTIX+Rnw63iHgTz+p00M+yp6Avm1Q+o6y82h0hkTzmpHg==
+
+vue3-smooth-scroll@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/vue3-smooth-scroll/-/vue3-smooth-scroll-0.8.1.tgz#c2de7dc33c0da8f195bbd70ac27b02c9cb1bd44c"
+  integrity sha512-9EN1aiBT2RtkIe1MoGiyGjUoLmqmlJ96R9/QVCylaiurHQ7oGu1SPzEoGJyxdhCa1q3qyMcX/pne1oTAn1UaoQ==
+
 vue@^3.2.26:
   version "3.2.26"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.26.tgz#5db575583ecae495c7caa5c12fd590dffcbb763e"

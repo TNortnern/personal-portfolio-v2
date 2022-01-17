@@ -19,7 +19,7 @@ const routes: AppRoute[] = [
   },
   {
     text: 'Testimonials',
-    href: '#testmonials',
+    href: '#testimonials',
   },
   {
     text: 'Contact',

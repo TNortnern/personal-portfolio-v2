@@ -1,6 +1,12 @@
 <template>
   <div
     id="contact"
+    v-observe-visibility="{
+      callback: setActiveRoute,
+      intersection: {
+        threshold: 0.4,
+      },
+    }"
     class="bg-app-dark-blue py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24 text-white"
   >
     <div class="relative max-w-xl mx-auto">
@@ -81,12 +87,11 @@
 
 <script setup lang="ts">
 import axios from 'axios'
-// import useActiveLink from '~/composables/useActiveLink'
-// const active = useActiveLink()
-const router = useRouter()
+import { useActiveRoute } from '~/composables/useActiveRoute'
 const sentMessage = ref('')
 const genericForm = ref<any>(null)
 const loading = ref(false)
+const { setActiveRoute } = useActiveRoute('contact')
 interface ContactForm {
   name?: string
   email?: string
@@ -132,12 +137,13 @@ const sendEmail = async(form: ContactForm) => {
   sentMessage.value = ''
   const emailBase = 'traynorthern@yahoo.com'
   setTimeout(() => {
+    // Optimistic response 🤷🏾‍♀️
     sentMessage.value = `Thank you ${form.name}, I've received your message.`
     loading.value = false
     genericForm.value.initializeForm()
   }, 600)
   try {
-    const { data } = await axios.post('https://personalport-be.herokuapp.com/email', {
+    await axios.post('https://personalport-be.herokuapp.com/email', {
       subject: `Message from website by: ${form.name}`,
       from: 'foodeater563@outlook.com',
       to: emailBase,

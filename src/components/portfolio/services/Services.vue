@@ -1,5 +1,14 @@
 <template>
-  <SectionBlock caption="What I Offer?" title="My Services">
+  <SectionBlock
+    id="services"
+    v-observe-visibility="{
+      callback: setActiveRoute,
+      intersection: {
+        threshold: 0.6,
+      },
+    }"
+    caption="What I Offer?" title="My Services"
+  >
     <div class="flex justify-between mt-16">
       <div v-for="{ title, description } in serviceItems" :key="title" class="w-[20%]">
         <span class="bg-app-dark-blue rounded-full p-4 flex items-center justify-center text-white w-22 h-22 mx-auto mb-5">
@@ -19,6 +28,8 @@
 </template>
 
 <script lang="ts" setup>
+import { useActiveRoute } from '~/composables/useActiveRoute'
+const { setActiveRoute } = useActiveRoute('services')
 const serviceItems = [
   {
     title: 'Website Development',
