@@ -15,9 +15,9 @@
           I also write about the web on my Biogand on Twitter.
         </p>
       </div>
-      <button class="border border-app-light-blue px-16 py-2.5 duration-150 text-xl rounded-md text-app-light-blue hover:(bg-gray-100 bg-opacity-10)">
+      <a v-smooth-scroll href="#contact" class="border border-app-light-blue px-16 py-2.5 duration-150 text-xl rounded-md text-app-light-blue hover:(bg-gray-100 bg-opacity-10)">
         Get in touch
-      </button>
+      </a>
     </div>
   </div>
 </template>

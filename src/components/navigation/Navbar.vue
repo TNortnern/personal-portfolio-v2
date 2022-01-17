@@ -14,7 +14,8 @@
           <li v-for="route in routes" :key="route.text" class="group">
             <a
               v-smooth-scroll
-              class="duration-150 group-hover:text-app-light-blue" :href="route.href"
+              :class="currentRoute.hash === route.href ? 'text-app-light-blue' : 'group-hover:text-app-light-blue'"
+              class="duration-150" :href="route.href"
             >{{ route.text }}</a>
           </li>
         </ul>
@@ -27,6 +28,8 @@
 import { useEventListener } from '~/composables/useEventListener'
 import { useRouteStore } from '~/stores/routes'
 const { routes } = useRouteStore()
+const currentRoute = useRoute()
+
 const navbar = ref<any>(null)
 const active = ref(false)
 if (typeof window !== 'undefined') {

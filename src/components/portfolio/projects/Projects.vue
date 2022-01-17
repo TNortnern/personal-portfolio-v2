@@ -10,7 +10,7 @@
     caption="Portfolio"
     title="My Works"
   >
-    <div class="flex justify-center text-lg gap-6 mt-16">
+    <div class="flex flex-wrap justify-center text-lg gap-6 mt-16">
       <button
         v-for="tab in tabs"
         :key="tab"
