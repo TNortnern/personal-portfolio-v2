@@ -25,6 +25,7 @@
       </div>
     </SectionBlock>
     <Contact />
+    <AppFooter />
   </div>
 </template>
 

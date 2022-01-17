@@ -1,7 +1,7 @@
 <template>
   <div
     class="py-12 fixed z-20 top-0 w-full bg-app-dark-blue duration-250 text-white" :class="{
-      'shadow-2xl pt-6 pb-6': active
+      'shadow-2xl pt-4 pb-4 bg-white text-black': active
     }"
   >
     <nav ref="navbar" class="main-container">

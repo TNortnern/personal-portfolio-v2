@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-app-dark-blue py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24 text-white">
+  <div id="contact" class="bg-app-dark-blue py-16 px-4 overflow-hidden sm:px-6 lg:px-8 lg:py-24 text-white">
     <div class="relative max-w-xl mx-auto">
       <!--
       <svg class="absolute left-full transform translate-x-1/2 text-app-light-blue fill-current" width="404" height="404" viewBox="0 0 404 404" aria-hidden="true">
@@ -21,7 +21,6 @@
       <SectionHeader title="Let's Talk" caption="Wanna work with me?" />
       <div>
         <form class="grid grid-cols-1 gap-y-6 text-black" @submit.prevent="submit()">
-          {{ form }}
           <AppInput id="name" v-model="form.name" name="name" label="Name" autocomplete="given-name" />
           <AppInput id="email" v-model="form.email" name="email" label="Email" autocomplete="email" />
           <AppInput id="phone" v-model="form.phone" name="phone" label="Phone Number(optional)" autocomplete="phone" />
