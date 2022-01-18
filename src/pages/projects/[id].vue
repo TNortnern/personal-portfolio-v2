@@ -61,20 +61,17 @@
 </template>
 
 <script lang="ts" setup>
-import { useProjectStore } from '~/stores/projects'
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
-
-// Import Swiper styles
-import 'swiper/css'
-
-import 'swiper/css/pagination'
-
-// import Swiper core and required modules
 import SwiperCore, {
   Autoplay,
   Pagination,
 } from 'swiper'
+import { useProjectStore } from '~/stores/projects'
+// Import Swiper Vue.js components
+
+// Import Swiper styles
+
+// import Swiper core and required modules
 
 // install Swiper modules
 SwiperCore.use([Pagination, Autoplay])
@@ -86,6 +83,9 @@ const project = computed(() => store.all[projectIndex.value])
 </script>
 
 <style>
+@import 'swiper/css';
+
+@import 'swiper/css/pagination';
 .swiper {
   width: 100%;
   height: 100%;

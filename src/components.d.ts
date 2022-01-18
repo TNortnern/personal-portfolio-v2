@@ -7,7 +7,6 @@ declare module 'vue' {
     AppFooter: typeof import('./components/footer/AppFooter.vue')['default']
     AppInput: typeof import('./components/common/AppInput.vue')['default']
     AppTextarea: typeof import('./components/common/AppTextarea.vue')['default']
-    CarouselSlider: typeof import('./components/misc/CarouselSlider.vue')['default']
     Contact: typeof import('./components/portfolio/contact/Contact.vue')['default']
     FullScreenLoader: typeof import('./components/misc/FullScreenLoader.vue')['default']
     Hero: typeof import('./components/portfolio/hero/Hero.vue')['default']
@@ -20,7 +19,6 @@ declare module 'vue' {
     SectionHeader: typeof import('./components/common/SectionHeader.vue')['default']
     Services: typeof import('./components/portfolio/services/Services.vue')['default']
     Testimonials: typeof import('./components/portfolio/testimonials/Testimonials.vue')['default']
-    TravelSlider: typeof import('./components/misc/TravelSlider.vue')['default']
   }
 }
 

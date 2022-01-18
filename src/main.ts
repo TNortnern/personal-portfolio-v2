@@ -38,18 +38,7 @@ export const createApp = ViteSSG(
     //     once: true,
     //   }))
     // }
-    let clientY = 0
-    router.beforeEach((to, from, next) => {
-      // console.log('to', to)
-      // console.log('from', from)
-      clientY = window.scrollY
-      // console.log('clientY', clientY)
-      next()
-    })
 
-    router.afterEach(() => {
-      window.scrollTo(0, clientY)
-    })
     Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
   },
   {
