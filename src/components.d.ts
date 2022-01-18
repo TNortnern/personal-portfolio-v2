@@ -14,6 +14,7 @@ declare module 'vue' {
     HeroIntro: typeof import('./components/portfolio/hero/HeroIntro.vue')['default']
     Navbar: typeof import('./components/navigation/Navbar.vue')['default']
     Projects: typeof import('./components/portfolio/projects/Projects.vue')['default']
+    ProjectSwitch: typeof import('./components/portfolio/projects/ProjectSwitch.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionBlock: typeof import('./components/common/SectionBlock.vue')['default']
     SectionHeader: typeof import('./components/common/SectionHeader.vue')['default']

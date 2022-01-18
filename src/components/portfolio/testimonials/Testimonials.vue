@@ -15,7 +15,7 @@
         v-for="i in 6"
         :key="i"
         href="#"
-        class="w-full mx-auto rounded-lg bg-app-dark-blue border border-gray-200 p-5 text-white font-light mb-6 duration-150 hover:(opacity-75) transform"
+        class="w-full mx-auto rounded-lg bg-white text-black shadow-2xl border border-gray-200 p-5  font-light mb-6 duration-150 hover:(opacity-75) transform"
       >
         <div class="w-full flex mb-4 items-center">
           <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">

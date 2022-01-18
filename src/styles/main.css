@@ -63,3 +63,13 @@ html.dark {
 .error-input {
   @apply ring-red-500 focus:ring-red-500;
 }
+
+.remove-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.remove-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

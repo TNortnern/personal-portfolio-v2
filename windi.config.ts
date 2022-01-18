@@ -2,12 +2,14 @@ import { defineConfig } from 'windicss/helpers'
 import colors from 'windicss/colors'
 import typography from 'windicss/plugin/typography'
 import animations from '@windicss/plugin-animations'
+import scrollbar from '@windicss/plugin-scrollbar'
 export default defineConfig({
   darkMode: 'class',
   // https://windicss.org/posts/v30.html#attributify-mode
   attributify: true,
 
   plugins: [
+    scrollbar,
     typography(),
     // Other plugins
     animations({

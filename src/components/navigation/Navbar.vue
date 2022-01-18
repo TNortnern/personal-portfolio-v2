@@ -1,13 +1,13 @@
 <template>
   <div
-    class="py-10 fixed  top-0 w-full bg-app-dark-blue duration-250 text-white" :class="{
+    class="py-10 fixed z-20 top-0 w-full bg-app-dark-blue duration-250 text-white" :class="{
       'shadow-2xl pt-4 pb-4 bg-white text-black z-20': active
     }"
   >
     <nav ref="navbar" class="main-container">
       <div class="flex items-center justify-between">
         <router-link to="/" class="flex items-center gap-2">
-          <img :class="active ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
+          <img :class="isActive ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
           <p>Trayvon Northern</p>
         </router-link>
         <ul class="lg:(flex items-center gap-4) hidden">
@@ -32,6 +32,7 @@ const currentRoute = useRoute()
 
 const navbar = ref<any>(null)
 const active = ref(false)
+const isActive = computed(() => !!active.value || currentRoute.path !== '/')
 if (typeof window !== 'undefined') {
   useEventListener(window, 'scroll', () => {
     // have we scrolled past this element?
