@@ -38,7 +38,7 @@ export const useProjectStore = defineStore({
   }),
   getters: {
     getProject: (state: RootState) => {
-      return (id: string) => state.all.find(p => p.id === id)
+      return (title: string) => state.all.find(p => p.title === title)
     },
   },
   actions: {

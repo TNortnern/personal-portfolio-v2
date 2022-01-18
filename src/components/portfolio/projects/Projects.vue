@@ -25,7 +25,7 @@
       <router-link
         v-for="project of all"
         :key="project.id"
-        :to="`/projects/${project.id}`"
+        :to="`/projects/${project.title}`"
         class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
       >
         <img
@@ -59,6 +59,7 @@ const tabs: Tab[] = [
   'design',
   'package',
 ]
+
 </script>
 
 <style>
