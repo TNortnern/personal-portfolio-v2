@@ -40,6 +40,9 @@ export const useProjectStore = defineStore({
     getProject: (state: RootState) => {
       return (title: string) => state.all.find(p => p.title === title)
     },
+    getProjectIndex: (state: RootState) => {
+      return (title: string) => state.all.findIndex(p => p.title === title)
+    },
   },
   actions: {
     async initialize() {

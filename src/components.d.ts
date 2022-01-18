@@ -19,7 +19,7 @@ declare module 'vue' {
     SectionHeader: typeof import('./components/common/SectionHeader.vue')['default']
     Services: typeof import('./components/portfolio/services/Services.vue')['default']
     Testimonials: typeof import('./components/portfolio/testimonials/Testimonials.vue')['default']
-    TripleSlider: typeof import('./components/misc/TripleSlider.vue')['default']
+    TravelSlider: typeof import('./components/misc/TravelSlider.vue')['default']
   }
 }
 

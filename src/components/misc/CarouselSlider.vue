@@ -28,7 +28,7 @@ interface Project {
 interface Media {
   url: string
 }
-defineProps<{ media: Media[]; project: Project | undefined }>()
+defineProps<{ media: Media[] | undefined; project: Project | undefined }>()
 
 onMounted(() => {
   /**
@@ -53,8 +53,8 @@ onMounted(() => {
 @import 'swiper/scss/navigation';
 
 :root {
-  --carousel-slider-max-width: 1200px;
-  --carousel-slider-width: 520px;
+  --carousel-slider-max-width: 1440px;
+  --carousel-slider-width: 600px;
   --carousel-slider-height: 380px;
   --carousel-slider-navigation-color: #fff;
   --carousel-slider-pagination-color: #fff;
