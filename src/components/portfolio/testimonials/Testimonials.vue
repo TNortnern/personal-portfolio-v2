@@ -12,22 +12,30 @@
   >
     <div class="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-5">
       <a
-        v-for="i in 6"
-        :key="i"
-        href="#"
-        class="w-full mx-auto rounded-lg bg-white text-black shadow-2xl border border-gray-200 p-5  font-light mb-6 duration-150 ring-2 ring-transparent hover:(ring-app-light-blue) transform"
+        v-for="testimonial in testimonials"
+        :key="testimonial.id"
+        :href="testimonial.url"
+        target="__blank"
+        class="w-full mx-auto rounded-lg bg-white text-black shadow-2xl border border-gray-200 p-5 font-light mb-6 duration-150 ring-2 ring-transparent hover:(ring-app-light-blue) transform"
       >
         <div class="w-full flex mb-4 items-center">
-          <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-            <img src="https://i.pravatar.cc/100?img=1" alt="avatar">
+          <div
+            class="overflow-hidden rounded-full w-10 h-10"
+            :class="{ 'bg-gray-50 border border-gray-200': testimonial.avatar }"
+          >
+            <img
+              :src="testimonial?.avatar?.url || '/avatarplaceholder.svg'"
+              :alt="testimonial.name"
+            >
           </div>
           <div class="flex-grow pl-3">
-            <h6 class="font-bold text-sm uppercase text-app-light-blue">Kenzie Edgar.</h6>
+            <h6 class="font-bold text-sm uppercase text-app-light-blue">{{ testimonial.name }}</h6>
           </div>
         </div>
         <div class="w-full">
-          <p class="text-sm leading-tight">
-            <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos sunt ratione dolor exercitationem minima quas itaque saepe quasi architecto vel! Accusantium, vero sint recusandae cum tempora nemo commodi soluta deleniti.
+          <p class=" leading-tight">
+            <span class="text-lg leading-none italic font-bold text-gray-400 mr-1">"</span>
+            {{ testimonial.body }}
             <span class="text-lg leading-none italic font-bold text-gray-400 ml-1">"</span>
           </p>
         </div>
@@ -38,5 +46,8 @@
 
 <script lang="ts" setup>
 import { useActiveRoute } from '~/composables/useActiveRoute'
+import { useRootStore } from '~/stores/root'
 const { setActiveRoute } = useActiveRoute('testimonials')
+const rootStore = useRootStore()
+const testimonials = computed(() => rootStore.testimonials)
 </script>

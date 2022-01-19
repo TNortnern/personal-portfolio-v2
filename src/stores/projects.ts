@@ -1,24 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { useProjects } from '~/composables/useProjects'
-
-interface ImageFormat {
-  ext: string
-  name: string
-  url: string
-  size: number
-  width: number
-  height: number
-}
-interface ImageFormats {
-  small: ImageFormat
-  medium: ImageFormat
-  thumbnail: ImageFormat
-}
-interface Media {
-  id: string
-  url: string
-  formats: ImageFormats
-}
+import type { Media } from '~/types'
 
 interface Role {
   id: string
