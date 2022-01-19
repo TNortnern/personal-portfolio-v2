@@ -30,7 +30,7 @@
       >
         <img
           v-lazy="{ src: project?.media?.[0]?.url }"
-          class="w-full h-100 object-cover"
+          class="w-full h-auto object-cover"
           :alt="project.title"
           :title="project.title"
         >

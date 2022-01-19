@@ -15,11 +15,11 @@
         v-for="i in 6"
         :key="i"
         href="#"
-        class="w-full mx-auto rounded-lg bg-white text-black shadow-2xl border border-gray-200 p-5  font-light mb-6 duration-150 hover:(opacity-75) transform"
+        class="w-full mx-auto rounded-lg bg-white text-black shadow-2xl border border-gray-200 p-5  font-light mb-6 duration-150 ring-2 ring-transparent hover:(ring-app-light-blue) transform"
       >
         <div class="w-full flex mb-4 items-center">
           <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-            <img src="https://i.pravatar.cc/100?img=1" alt>
+            <img src="https://i.pravatar.cc/100?img=1" alt="avatar">
           </div>
           <div class="flex-grow pl-3">
             <h6 class="font-bold text-sm uppercase text-app-light-blue">Kenzie Edgar.</h6>

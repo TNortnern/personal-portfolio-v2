@@ -1,5 +1,7 @@
 <template>
-  <div class=" text-app-light-blue fixed w-full h-18 bottom-0 left-0 z-10 bg-app-dark-blue text-sm md:text-base">
+  <div
+    class="text-app-light-blue fixed w-full h-18 bottom-0 left-0 z-10 bg-app-dark-blue text-sm md:text-base"
+  >
     <div class="main-container flex items-center h-full justify-between px-6">
       <component
         :is="projectIndex !== 0 ? 'router-link' : 'div'"
@@ -7,12 +9,18 @@
           'pointer-events-none opacity-50': projectIndex === 0
         }"
         v-bind="{
-          ...(projectIndex !== 0 && { to: `/projects/${store.all[projectIndex-1].title}` })
+          ...(projectIndex !== 0 && { to: `/projects/${store.all[projectIndex - 1].title}` })
         }"
         class="flex items-center"
       >
         <Chevron class="md:(w-8 h-8) w-5 h-5 transform rotate-180" />
-        <p>Previous{{ store.all[projectIndex-1] && `(${store.all?.[projectIndex-1].title})` }}</p>
+        <p>
+          Previous
+          <span
+            class="hidden md:inline-block"
+          >{{ store.all[projectIndex - 1] && `(${store.all?.[projectIndex - 1].title})` }}</span>
+          <span class="md:hidden">Project</span>
+        </p>
       </component>
       <component
         :is="projectIndex !== store.all.length - 1 ? 'router-link' : 'div'"
@@ -20,11 +28,17 @@
           'pointer-events-none opacity-50': projectIndex === store.all.length - 1
         }"
         v-bind="{
-          ...(projectIndex !== store.all.length - 1 && { to: `/projects/${store.all[projectIndex+1].title}` })
+          ...(projectIndex !== store.all.length - 1 && { to: `/projects/${store.all[projectIndex + 1].title}` })
         }"
         class="flex items-center"
       >
-        <p>Next{{ store.all[projectIndex+1] && `(${store.all?.[projectIndex+1].title})` }}</p>
+        <p>
+          Next
+          <span
+            class="hidden md:inline-block"
+          >{{ store.all[projectIndex + 1] && `(${store.all?.[projectIndex + 1].title})` }}</span>
+          <span class="md:hidden">Project</span>
+        </p>
         <Chevron class="md:(w-8 h-8) w-5 h-5" />
       </component>
     </div>
