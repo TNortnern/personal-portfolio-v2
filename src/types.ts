@@ -14,6 +14,7 @@ export interface ImageFormats {
   small: ImageFormat
   medium: ImageFormat
   thumbnail: ImageFormat
+  large: ImageFormat
 }
 export interface Media {
   id: string
