@@ -7,6 +7,7 @@ declare module 'vue' {
     AppFooter: typeof import('./components/footer/AppFooter.vue')['default']
     AppInput: typeof import('./components/common/AppInput.vue')['default']
     AppTextarea: typeof import('./components/common/AppTextarea.vue')['default']
+    CloseButton: typeof import('./components/common/CloseButton.vue')['default']
     Contact: typeof import('./components/portfolio/contact/Contact.vue')['default']
     FullScreenLoader: typeof import('./components/misc/FullScreenLoader.vue')['default']
     Hero: typeof import('./components/portfolio/hero/Hero.vue')['default']

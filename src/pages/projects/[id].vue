@@ -1,54 +1,20 @@
 <template>
   <div class="overflow-y-hidden relative">
-    <button
-      class="absolute top-8 right-6 md:(top-6 right-12) bg-white rounded-full transform hover:animate-spin animate-duration-[1000ms]"
-      @click="$router.push('/#works')"
-    >
-      <svg
-        class="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
-      </svg>
-    </button>
     <!-- <Navbar /> -->
     <transition mode="out-in" name="fade">
       <div
         :key="projectIndex"
-        class="main-container text-white p-8 rounded-lg mt-4 h-[96vh] scrollbar-thin scrollbar-thumb-app-light-blue scrollbar-track-white overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full"
+        class="main-container text-white px-5 pt-7 lg:px-10 2xl:px-6 pb-3 rounded-lg h-[96vh] scrollbar-thin scrollbar-thumb-app-light-blue scrollbar-track-white overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full"
       >
         <div class="mb-8">
           <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center">
             <h1>{{ project?.title }}</h1>
-            <button
-              class="md:hidden text-black bg-white rounded-full transform hover:animate-spin animate-duration-[1000ms]"
+            <CloseButton
+              class="text-black"
               @click="$router.push('/#works')"
-            >
-              <svg
-                class="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
+            />
           </div>
-          <p class="text-app-light-blue mt-8 mb-2 text-2xl md:text-3xl">
+          <p class="text-app-light-blue mb-2 text-2xl md:text-3xl">
             Description
           </p>
           <p>
@@ -60,13 +26,13 @@
             <p
               v-for="tech in project.technologies"
               :key="tech.id"
-              class="bg-app-light-blue p-1 rounded-full w-[48%] md:w-32 text-center"
+              class="bg-white text-app-dark-blue py-0.8 rounded-full w-[48%] md:w-32 text-center"
             >
               {{ tech.name }}
             </p>
           </div>
           <button
-            class="bg-white block w-full lg:(w-auto mx-0) text-app-light-blue mt-5 px-5 py-1.5 text-lg border border-app-light-blue hover:(transform scale-110) focus:(ring-2 ring-white) duration-200 rounded-md"
+            class="bg-app-light-blue block w-full lg:(w-auto mx-0) text-white mt-5 px-5 py-1.5 text-lg border border-app-light-blue hover:(bg-opacity-80) focus:(ring-2 ring-white) duration-200 rounded-md"
           >
             View Project
           </button>
