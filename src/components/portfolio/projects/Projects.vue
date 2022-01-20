@@ -15,15 +15,15 @@
         v-for="tab in tabs"
         :key="tab"
         class="rounded-full py-2.5 w-30 duration-150 capitalize"
-        :class="activeItem === tab ? 'bg-app-light-blue text-white' : 'text-gray-400 hover:(bg-app-light-blue text-white bg-opacity-75)'"
-        @click="activeItem = tab"
+        :class="projectStore.getActiveCategoryTab === tab ? 'bg-app-light-blue text-white' : 'text-gray-400 hover:(bg-app-light-blue text-white bg-opacity-75)'"
+        @click="setActiveCategoryTab(tab)"
       >
         {{ `${tab}${tab !== 'all' ? 's' : ''}` }}
       </button>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16">
       <router-link
-        v-for="project of all"
+        v-for="project of projectStore.allFiltered"
         :key="project.id"
         :to="`/projects/${project.title}`"
         class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
@@ -46,12 +46,12 @@
   </SectionBlock>
 </template>
 <script lang="ts" setup>
+import type { Tab } from '~/stores/projects'
 import { useProjectStore } from '~/stores/projects'
 import { useActiveRoute } from '~/composables/useActiveRoute'
 const { setActiveRoute } = useActiveRoute('works')
-const { all } = useProjectStore()
-type Tab = 'all' | 'website' | 'email' | 'design' | 'package'
-const activeItem = ref<Tab>('all')
+const projectStore = useProjectStore()
+const { all, setActiveCategoryTab } = useProjectStore()
 const tabs: Tab[] = [
   'all',
   'website',

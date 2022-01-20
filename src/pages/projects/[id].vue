@@ -34,7 +34,7 @@
           <component
             :is="project.hosted_url ? 'a' : 'button'"
             v-bind="(project.hosted_url && { href: project.hosted_url, target: '__blank' })"
-            class="bg-app-light-blue block w-full lg:(w-auto mx-0 inline-block) text-white mt-5 px-5 py-1.5 text-lg border border-app-light-blue hover:(bg-opacity-80) focus:(ring-2 ring-white) duration-200 rounded-md"
+            class="bg-app-light-blue block w-full md:(w-auto mx-0 inline-block) text-white mt-5 px-5 py-1.5 text-lg border border-app-light-blue hover:(bg-opacity-80) focus:(ring-2 ring-white) duration-200 rounded-md"
           >
             View Project
           </component>
