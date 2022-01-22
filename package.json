@@ -5,7 +5,7 @@
     "dev": "vite --port 3100",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "preview": "vite preview",
-    "static:deploy": "Xcopy /E /I dist staticdeploys && git add . && git commit -m'initted' && git push",
+    "static:deploy": "Xcopy /E /I dist staticdeploys && cd staticdeploys && git add . && git commit -m'initted' && git push",
     "preview-https": "serve dist",
     "test": "vitest",
     "test:e2e": "cypress open",
