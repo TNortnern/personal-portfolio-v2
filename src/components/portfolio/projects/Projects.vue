@@ -28,12 +28,11 @@
         :to="`/projects/${project.title}`"
         class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
       >
-        <img
-          v-lazy="{ src: project?.media?.[0]?.url }"
-          class="w-full h-auto object-cover"
-          :alt="project.title"
-          :title="project.title"
-        >
+        <picture>
+          <!-- <source media="(min-width:1024px)" :srcset="project?.media?.[0]?.formats?.medium?.url"> -->
+          <source media="(min-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
+          <img class="overflow-hidden max-" :src="project?.media?.[0]?.url" :alt="project.title">
+        </picture>
         <div
           class="bg-black text-white bg-opacity-70 absolute inset-0 h-full w-full flex justify-center items-center duration-200 opacity-0 group-hover:(opacity-100)"
         >
@@ -51,7 +50,7 @@ import { useProjectStore } from '~/stores/projects'
 import { useActiveRoute } from '~/composables/useActiveRoute'
 const { setActiveRoute } = useActiveRoute('works')
 const projectStore = useProjectStore()
-const { all, setActiveCategoryTab } = useProjectStore()
+const { setActiveCategoryTab } = useProjectStore()
 const tabs: Tab[] = [
   'all',
   'website',
