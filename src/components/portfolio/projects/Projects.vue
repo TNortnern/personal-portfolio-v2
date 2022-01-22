@@ -10,7 +10,7 @@
     caption="Portfolio"
     title="My Works"
   >
-    <div class="flex flex-wrap justify-center text-lg gap-6 mt-16">
+    <div class="flex flex-wrap justify-center text-lg gap-6 mt-16 h">
       <button
         v-for="tab in tabs"
         :key="tab"
@@ -21,7 +21,7 @@
         {{ `${tab}${tab !== 'all' ? 's' : ''}` }}
       </button>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16 lg:min-h-[30rem] min-[19rem]">
       <router-link
         v-for="project of projectStore.allFiltered"
         :key="project.id"
@@ -67,7 +67,7 @@ img {
   @apply duration-300;
 }
 img[lazy="loading"] {
-  @apply bg-black opacity-65;
+  @apply bg-black opacity-65 h-full w-full h-[350px];
 }
 img[lazy="loaded"] {
   @apply opacity-100;

@@ -26,9 +26,27 @@ const routes = setupLayouts(generatedRoutes)
 // https://github.com/antfu/vite-ssg
 export const createApp = ViteSSG(
   App,
-  { routes, base: import.meta.env.BASE_URL },
+  {
+    routes,
+    base: import.meta.env.BASE_URL,
+    scrollBehavior(to, from, savedPosition) {
+      if (to.hash) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve({ // x, y are replaced with left/top to define position, but when used with an element selector (el) will be used as offset
+              el: to.hash,
+              // offset has to be set as left and top at the top level
+              // left: 0,
+              // top: 0,
+              behavior: 'smooth',
+            })
+          }, 300)
+        })
+      }
+    },
+  },
   async(ctx) => {
-    const { app, router } = ctx
+    const { app } = ctx
     app.use(VGenericForm)
     app.use(VueSmoothScroll)
     app.use(VueObserveVisibility)
