@@ -1,5 +1,4 @@
 /* @import './markdown.css'; */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
 html,
 body,
 #app {
@@ -72,4 +71,15 @@ html.dark {
 .remove-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('~/assets/font/Quicksand-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('~/assets/font/Quicksand-Bold.ttf');
+  font-weight: 700;
 }

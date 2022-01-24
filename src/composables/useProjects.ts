@@ -15,7 +15,7 @@ export function useProjects() {
       const { toggleAppLoading } = useRootStore()
       toggleAppLoading(true)
       try {
-        const { data }: AxiosResponse = await axios.get('https://personalport-be.herokuapp.com/projects')
+        const { data }: AxiosResponse = await axios.get('https://personalport-be.herokuapp.com/projects?isActive=true')
         request.data = data
       }
       catch (err: AxiosError | unknown) {

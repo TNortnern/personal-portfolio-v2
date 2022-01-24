@@ -5,7 +5,7 @@
     "dev": "vite --port 3100",
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "preview": "vite preview",
-    "static:deploy": "Xcopy /E /I dist staticdeploys && cd staticdeploys && git add . && git commit -m'initted' && git push",
+    "static:deploy": "yarn build && Xcopy /Y /E /I dist staticdeploys && cd staticdeploys && git add . && git commit -m'initted' && git push",
     "preview-https": "serve dist",
     "test": "vitest",
     "test:e2e": "cypress open",
@@ -13,6 +13,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@jambonn/vue-lazyload": "^1.0.9",
     "@vueuse/core": "^7.4.1",
     "@vueuse/head": "^0.7.4",
     "axios": "^0.24.0",

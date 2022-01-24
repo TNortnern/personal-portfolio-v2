@@ -28,11 +28,19 @@
         :to="`/projects/${project.title}`"
         class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
       >
-        <picture>
-          <!-- <source media="(min-width:1024px)" :srcset="project?.media?.[0]?.formats?.medium?.url"> -->
-          <source media="(min-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
-          <img class="overflow-hidden max-" :src="project?.media?.[0]?.url" :alt="project.title">
-        </picture>
+        <!-- <picture v-if="project?.media?.[0]?.formats?.medium?.size > 180">
+          <source media="(min-width:768px)" :srcset="project?.media?.[0]?.formats?.medium?.url">
+          <source media="(max-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
+          <img
+            v-lazy="{ src: project?.media?.[0]?.url }" class="overflow-hidden w-full"
+            :alt="project.title"
+          >
+        </picture> -->
+        <!-- <picture>
+          <source media="(min-width:768px)" :srcset="project?.media?.[0]?.formats?.medium?.url">
+          <source media="(max-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
+        </picture> -->
+        <img v-lazy="project?.media?.[0]?.url" loading="/avatar.png" class="overflow-hidden w-full h-full" :alt="project.title">
         <div
           class="bg-black text-white bg-opacity-70 absolute inset-0 h-full w-full flex justify-center items-center duration-200 opacity-0 group-hover:(opacity-100)"
         >
@@ -66,10 +74,11 @@ img {
   @apply duration-300;
 }
 img[lazy="loading"] {
-  @apply bg-black opacity-65 h-full w-full h-[350px];
+  @apply bg-black opacity-65 md:h-[416px] w-full h-[350px];
 }
 img[lazy="loaded"] {
   @apply opacity-100;
   /*your style here*/
 }
+
 </style>

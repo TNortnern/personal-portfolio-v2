@@ -31,7 +31,6 @@ export const useRootStore = defineStore({
     async initialize() {
       const { data: testimonials } = await api.get('/testimonials')
       this.testimonials = testimonials
-      console.log('data', testimonials)
     },
     toggleAppLoading(value: boolean) {
       if (typeof value !== 'undefined') this.appLoading = value
