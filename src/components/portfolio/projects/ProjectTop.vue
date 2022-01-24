@@ -1,6 +1,6 @@
 <template>
   <div class="mb-8">
-    <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center sticky top-0 z-20 bg-app-dark-blue py-6">
+    <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center sticky top-0 z-20 bg-app-dark-blue py-6 border-b border-white">
       <h1>{{ project?.title }}</h1>
       <CloseButton
         class="text-black"
@@ -15,7 +15,7 @@
         project?.description
       }}
     </p>
-    <div class="flex flex-wrap items-center gap-3 mt-6 text-sm lg:text-base">
+    <div class="flex flex-wrap items-center gap-3 mt-6 text-sm lg:text-base border-b border-white pb-8">
       <p
         v-for="tech in project.technologies"
         :key="tech.id"
