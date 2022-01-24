@@ -83,3 +83,7 @@ html.dark {
   src: url('~/assets/font/Quicksand-Bold.ttf');
   font-weight: 700;
 }
+
+html {
+  @apply bg-app-dark-blue;
+}

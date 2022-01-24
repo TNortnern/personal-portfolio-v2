@@ -21,11 +21,15 @@ declare module 'vue' {
     MobileMenu: typeof import('./components/navigation/mobile-menu/MobileMenu.vue')['default']
     Navbar: typeof import('./components/navigation/Navbar.vue')['default']
     Projects: typeof import('./components/portfolio/projects/Projects.vue')['default']
+    ProjectSwiper: typeof import('./components/portfolio/projects/ProjectSwiper.vue')['default']
     ProjectSwitch: typeof import('./components/portfolio/projects/ProjectSwitch.vue')['default']
+    ProjectTop: typeof import('./components/portfolio/projects/ProjectTop.vue')['default']
     README: typeof import('./components/README.md')['default']
     SectionBlock: typeof import('./components/common/SectionBlock.vue')['default']
     SectionHeader: typeof import('./components/common/SectionHeader.vue')['default']
     Services: typeof import('./components/portfolio/services/Services.vue')['default']
+    SlideChanger: typeof import('./components/misc/SlideChanger.vue')['default']
+    SliderArrow: typeof import('./components/icons/SliderArrow.vue')['default']
     Testimonials: typeof import('./components/portfolio/testimonials/Testimonials.vue')['default']
   }
 }

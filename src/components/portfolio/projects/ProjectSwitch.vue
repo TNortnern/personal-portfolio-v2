@@ -2,7 +2,13 @@
   <div
     class="text-app-light-blue fixed w-full h-18 bottom-0 left-0 z-10 bg-app-dark-blue text-sm md:text-base"
   >
-    <div class="main-container flex items-center h-full justify-between px-2">
+    <div class="main-container flex items-center h-full justify-between px-2 relative">
+      <!-- <div class="absolute right-0 bottom-14">
+        <div class="flex items-center sticky top-0">
+          <SlideChanger class="prev-slide" :include-text="false" />
+          <SlideChanger class="next-slide" :include-text="false" rotate />
+        </div>
+      </div> -->
       <component
         :is="projectIndex !== 0 ? 'router-link' : 'div'"
         :class="{
