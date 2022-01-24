@@ -4,9 +4,9 @@
     <div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
       <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
         <div v-for="item in navigation.main" :key="item.name" class="px-5 py-2">
-          <a :href="item.href" class="text-base duration-15 text-white hover:text-app-light-blue">
+          <router-link :to="item.href" class="text-base duration-15 text-white hover:text-app-light-blue">
             {{ item.name }}
-          </a>
+          </router-link>
         </div>
       </nav>
       <p class="mt-8 text-center text-base text-gray-300">
@@ -17,16 +17,16 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent, h } from 'vue'
+// import { defineComponent, h } from 'vue'
 
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'About', href: '/about' },
+    { name: 'Resume', href: '/resume' },
+    { name: 'Blog', href: '/blog' },
+    // { name: 'Jobs', href: '#' },
+    // { name: 'Accessibility', href: '#' },
+    // { name: 'Partners', href: '#' },
   ],
   // social: [
   //   {
