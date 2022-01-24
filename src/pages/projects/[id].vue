@@ -3,7 +3,7 @@
     <transition mode="out-in" name="fade">
       <div
         :key="projectIndex"
-        class="main-container text-white px-5 pt-7 lg:px-10 2xl:px-6 rounded-lg max-h-[100vh] scrollbar-thin scrollbar-thumb-app-light-blue scrollbar-track-white overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full"
+        class="main-container text-white px-5 lg:px-10 2xl:px-6 rounded-lg max-h-[100vh] scrollbar-thin scrollbar-thumb-app-light-blue scrollbar-track-white overflow-y-auto scrollbar-thumb-rounded-full scrollbar-track-rounded-full"
       >
         <ProjectTop />
         <ProjectSwiper />

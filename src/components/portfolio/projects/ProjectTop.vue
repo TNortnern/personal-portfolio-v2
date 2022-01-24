@@ -1,6 +1,6 @@
 <template>
   <div class="mb-8">
-    <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center">
+    <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center sticky top-0 bg-app-dark-blue py-6">
       <h1>{{ project?.title }}</h1>
       <CloseButton
         class="text-black"
@@ -52,3 +52,13 @@ const projectIndex = computed(() => store.getProjectIndex(route.params.id.toStri
 const project = computed(() => store.all[projectIndex.value])
 const topControls = ref<HTMLBodyElement | null>(null)
 </script>
+
+<style scoped>
+
+.project-cta-link__text {
+  @apply relative flex justify-center items-center px-3 py-2 md:px-4 xl:py-3.5;
+}
+.project-cta-link__bg {
+  @apply absolute bg-app-light-blue inset-x-0 bottom-0 h-1/12  group-hover:h-full duration-150;
+}
+</style>

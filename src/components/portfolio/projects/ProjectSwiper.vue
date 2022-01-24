@@ -100,10 +100,4 @@ const project = computed(() => store.all[projectIndex.value])
   transform: scale(0);
 }
 
-.project-cta-link__text {
-  @apply relative flex justify-center items-center px-3 py-2 md:px-4 xl:py-3.5 text-xs sm:text-base;
-}
-.project-cta-link__bg {
-  @apply absolute bg-app-light-blue inset-x-0 bottom-0 h-1/12  group-hover:h-full duration-150;
-}
 </style>
