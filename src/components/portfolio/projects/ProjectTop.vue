@@ -10,16 +10,16 @@
     <p class="text-app-light-blue mb-2 text-2xl md:text-3xl">
       Description
     </p>
-    <p>
+    <p class="text-sm lg:text-base">
       {{
         project?.description
       }}
     </p>
-    <div class="flex flex-wrap items-center gap-3 mt-6">
+    <div class="flex flex-wrap items-center gap-3 mt-6 text-sm lg:text-base">
       <p
         v-for="tech in project.technologies"
         :key="tech.id"
-        class="bg-white text-app-dark-blue py-0.8 rounded-full w-[48%] md:w-32 text-center"
+        class="bg-white text-app-dark-blue py-0.7 lg:py-0.8 rounded-full w-[48%] md:w-32 text-center"
       >
         {{ tech.name }}
       </p>
