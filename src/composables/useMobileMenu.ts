@@ -7,6 +7,6 @@ export function useMobileMenu() {
   })
   return {
     isOpen: () => expanded.value,
-    toggle: () => expanded.value = !expanded.value,
+    toggle: (value?: boolean) => value || value === false ? expanded.value = value : expanded.value = !expanded.value,
   }
 }

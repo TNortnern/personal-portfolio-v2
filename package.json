@@ -6,6 +6,7 @@
     "lint": "eslint \"**/*.{vue,ts,js}\"",
     "preview": "vite preview",
     "static:deploy": "yarn build && Xcopy /Y /E /I dist staticdeploys && cd staticdeploys && git add . && git commit -m'initted' && git push",
+    "fix:ssr": "yarn add -D patch-vue-directive-ssr",
     "preview-https": "serve dist",
     "test": "vitest",
     "test:e2e": "cypress open",
@@ -13,10 +14,10 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@jambonn/vue-lazyload": "^1.0.9",
     "@vueuse/core": "^7.4.1",
     "@vueuse/head": "^0.7.4",
     "axios": "^0.24.0",
+    "lozad": "^1.16.0",
     "pinia": "^2.0.9",
     "prism-theme-vars": "^0.2.2",
     "swiper": "^7.4.1",
@@ -25,7 +26,6 @@
     "vue-demi": "^0.12.1",
     "vue-i18n": "^9.1.9",
     "vue-router": "^4.0.12",
-    "vue3-lazyload": "^0.2.5-beta",
     "vue3-observe-visibility2": "^0.0.3",
     "vue3-smooth-scroll": "^0.8.1"
   },
@@ -34,6 +34,7 @@
     "@iconify-json/carbon": "^1.0.12",
     "@intlify/vite-plugin-vue-i18n": "^3.2.1",
     "@nuxt/devalue": "^2.0.0",
+    "@types/lozad": "^1.16.1",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
     "@vitejs/plugin-vue": "^2.0.1",

@@ -8,7 +8,6 @@ import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
 // import { createPinia } from 'pinia'
 // import VueLazyLoad from 'vue3-lazyload'
-import VueLazyLoad from '@jambonn/vue-lazyload'
 
 import App from './App.vue'
 
@@ -30,7 +29,7 @@ export const createApp = ViteSSG(
   {
     routes,
     base: import.meta.env.BASE_URL,
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior(to) {
       if (to.hash) {
         return new Promise((resolve) => {
           setTimeout(() => {
@@ -51,20 +50,6 @@ export const createApp = ViteSSG(
     app.use(VGenericForm)
     app.use(VueSmoothScroll)
     app.use(VueObserveVisibility)
-
-    app.use(VueLazyLoad, {
-      observer: true,
-
-      // optional
-      observerOptions: {
-        rootMargin: '700px',
-        threshold: 0.1,
-      },
-      preLoad: 1.3,
-      // error: errorimage,
-      // loading: LoadImage,
-      attempt: 5,
-    })
     // if (isClient) {
     //   app.use(AOS.init({
     //     once: true,

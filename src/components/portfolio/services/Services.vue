@@ -15,7 +15,7 @@
           <component :is="icon" :class="iconClass" />
         </span>
         <div class="lg:(text-center pl-0) pl-4">
-          <h5 class="text-2xl mb-5">
+          <h5 class="text-2xl mb-5 text-app-light-blue">
             {{ title }}
           </h5>
           <span class="text-gray-400 block">

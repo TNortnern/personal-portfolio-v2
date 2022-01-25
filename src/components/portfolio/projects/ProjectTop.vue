@@ -1,6 +1,6 @@
 <template>
   <div class="mb-8">
-    <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center sticky top-0 z-20 bg-app-dark-blue py-6 border-b border-white">
+    <div class="text-3xl md:text-4xl mb-3 flex justify-between items-center  bg-app-dark-blue py-6 border-b border-white">
       <h1>{{ project?.title }}</h1>
       <CloseButton
         class="text-black"

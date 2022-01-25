@@ -5,7 +5,7 @@
       <textarea
         :id="id || name"
         :class="{
-          'border-red-600 ring-4 ring-red-400': error,
+          'border-red-600 ring-4 ring-red-400 border-4 lg:border ': error,
           'focus:(ring-app-light-blue ring-4 border-app-light-blue) border-gray-300': !error
         }"
         :name="name"
@@ -14,6 +14,7 @@
         class="py-3 px-4 block w-full shadow-sm border rounded-md"
         @input="handleInput($event)"
       />
+      <span class="text-red-400 block mt-1">{{ error }}</span>
     </div>
   </div>
 </template>
