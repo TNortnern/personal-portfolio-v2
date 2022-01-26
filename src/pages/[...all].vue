@@ -22,9 +22,9 @@
             This page is under construction.
           </p> -->
           <div class="mt-6">
-            <router-link to="/" class="text-base font-medium text-app-light-blue/85 duration-200 hover:text-app-light-blue">
+            <a href="/" class="text-base font-medium text-app-light-blue/85 duration-200 hover:text-app-light-blue">
               Go back home<span aria-hidden="true"> &rarr;</span>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>
