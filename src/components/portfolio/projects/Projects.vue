@@ -15,41 +15,40 @@
         v-for="tab in tabs"
         :key="tab"
         class="rounded-full py-2.5 w-30 duration-150 capitalize"
+        :data-filter="tab === 'all' ? 'all' : '.' + tab"
         :class="projectStore.getActiveCategoryTab === tab ? 'bg-app-light-blue text-white' : 'text-gray-400 hover:(bg-app-light-blue text-white bg-opacity-75)'"
         @click="setActiveCategoryTab(tab)"
       >
         {{ `${tab}${tab !== 'all' ? 's' : ''}` }}
       </button>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-8 justify-items-center pt-16 lg:min-h-[30rem] min-[19rem]">
+    <div class="mix-grid mt-8">
       <router-link
-        v-for="project of projectStore.allFiltered" :key="project.id"
-        :to="`/projects/${project.title}`"
-        class="bg-white shadow-2xl group relative rounded-md overflow-hidden w-full"
+        v-for="project of projectStore.all" :key="project.id"
+        :to="`/projects/${project.title}`" class="mix group bg-white shadow-2xl relative rounded-md overflow-hidden relative project-width"
+        :class="project.category.title.toLowerCase()"
       >
-        <img v-if="!loadedItems.includes(project.id)" :data-item-id="project.id" class="lozad loading-image overflow-hidden w-full" src="/imgload.svg" alt="loading image">
+        <img v-if="!loadedItems.includes(project.id)" :data-item-id="project.id" class="lozad loading-image overflow-hidden h-full w-full" src="/imgload.svg" alt="loading image">
         <picture v-else>
           <source media="(min-width:769px)" :srcset="project?.media?.[0]?.formats?.large?.url">
           <source media="(max-width:768px)" :srcset="project?.media?.[0]?.formats?.medium?.url">
           <source media="(max-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
           <img
-            :src="project?.media?.[0]?.url" class="overflow-hidden w-full"
+            :src="project?.media?.[0]?.url" class="overflow-hidden  w-full"
             :alt="project.title"
           >
         </picture>
-        <!-- <picture>
-            <source media="(min-width:768px)" :srcset="project?.media?.[0]?.formats?.medium?.url">
-            <source media="(max-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
-          </picture> -->
-        <!-- <img v-lazy="project?.media?.[0]?.url" data-srcset="http://placeimg.com/640/480/cats 400w, https://iamhrt.com/wp-content/uploads/2021/05/Andrew-Evans-PA-270x297.png 1200w" loading="/avatar.png" class="overflow-hidden w-full h-full" :alt="project.title"> -->
+        <div class="absolute h-full w-full inset-0 bg-black bg-opacity-60 transform -translate-x-[100%] opacity-0 group-hover:(translate-x-0 opacity-100) duration-400" />
+        <div class="absolute h-full w-full inset-0 bg-black bg-opacity-60 transform translate-x-[100%] opacity-0 group-hover:(translate-x-0 opacity-100) duration-400" />
         <div
-          class="bg-black text-white bg-opacity-70 absolute inset-0 h-full w-full flex justify-center items-center duration-200 opacity-0 group-hover:(opacity-100)"
+          class=" text-white absolute inset-0 h-full w-full flex justify-center items-center duration-200 opacity-0 group-hover:(opacity-100)"
         >
-          <h1 class="text-4xl font-bold">
+          <h1 class="text-4xl font-bold group-hover:(animate-fade-in-up animate-faster)">
             {{ project.title }}
           </h1>
         </div>
       </router-link>
+      <div class="project-width" />
     </div>
   </SectionBlock>
 </template>
@@ -58,6 +57,7 @@ import lozad from 'lozad'
 import type { Tab } from '~/stores/projects'
 import { useProjectStore } from '~/stores/projects'
 import { useActiveRoute } from '~/composables/useActiveRoute'
+import { useMixItUp } from '~/composables/useMixItUp'
 const { setActiveRoute } = useActiveRoute('works')
 const projectStore = useProjectStore()
 const { setActiveCategoryTab } = useProjectStore()
@@ -69,8 +69,19 @@ const tabs: Tab[] = [
   'package',
 ]
 // weird type but it surpresses the ts warning..
-const loadedItems = ref<string[]|any[]|null[]>([])
-onMounted(() => {
+const loadedItems = ref<string[] | any[] | null[]>([])
+const initialize = useMixItUp('.mix-grid', {
+  animation: {
+    animateResizeTargets: true,
+  },
+})
+watch(() => initialize, (val: any) => {
+  // initalize mixer default value
+  val?.mixer.value.filter(projectStore.getActiveCategoryTab === 'all' ? 'all' : `.${projectStore.getActiveCategoryTab}`)
+}, {
+  deep: true,
+})
+onMounted(async() => {
   const observer = lozad('.lozad', {
     rootMargin: '400px',
     threshold: 0.1,
@@ -81,22 +92,26 @@ onMounted(() => {
   }) // lazy loads elements with default selector as '.lozad'
   observer.observe()
 })
+
 </script>
 
-<style>
-img {
-  @apply duration-300;
-}
-img[lazy="loading"] {
-  @apply bg-black opacity-65 md:h-[416px] w-full h-[350px];
-}
-img[lazy="loaded"] {
-  @apply opacity-100;
-  /*your style here*/
-}
+<style lang="scss">
 .loading-image {
-    filter: blur(8px);
+  filter: blur(8px);
+}
 
+.mix-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-content: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-width {
+  @apply w-[47%] md:w-[48.8%] lg:w-[49%];
 }
 
 </style>

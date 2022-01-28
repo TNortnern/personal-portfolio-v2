@@ -75,6 +75,7 @@ const project = computed(() => store.all[projectIndex.value])
 .swiper-slide {
   text-align: center;
   font-size: 18px;
+  @apply pb-10;
   /* Center slide text vertically */
   /* @apply !w-auto; */
 }

@@ -26,8 +26,11 @@
     </div>
     <div class="flex items-center justify-between mt-6">
       <component
-        :is="project.hosted_url ? 'a' : 'button'"
-        v-bind="(project.hosted_url && { href: project.hosted_url, target: '__blank' })"
+        :is="project.hosted_url ? 'a' : 'router-link'"
+        v-bind="{
+          ...(project.hosted_url && { href: project.hosted_url, target: '__blank' }),
+          ...(!project.hosted_url) && { to: '/#contact' }
+        }"
         class="project-cta-link__text group"
       >
         <div class="relative z-10">

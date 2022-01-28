@@ -1,6 +1,6 @@
 <template>
   <div
-    class="text-app-light-blue fixed w-full h-18 bottom-0 left-0 z-10 bg-app-dark-blue text-sm md:text-base"
+    class="text-app-light-blue fixed w-full h-18 bottom-0 left-0 z-10 bg-app-dark-blue border-t-4 border-app-light-blue text-sm md:text-base"
   >
     <div class="main-container flex items-center h-full justify-between px-6 relative">
       <!-- <div class="absolute right-0 bottom-14">
