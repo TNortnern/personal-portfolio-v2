@@ -3,6 +3,7 @@ import devalue from '@nuxt/devalue'
 import VGenericForm from 'v-generic-form'
 import VueSmoothScroll from 'vue3-smooth-scroll'
 import VueObserveVisibility from 'vue3-observe-visibility2'
+import VueGtag from 'vue-gtag'
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'
@@ -53,10 +54,16 @@ export const createApp = ViteSSG(
     },
   },
   async(ctx) => {
-    const { app } = ctx
+    const { app, router } = ctx
     app.use(VGenericForm)
     app.use(VueSmoothScroll)
     app.use(VueObserveVisibility)
+    app.use(VueGtag, {
+      config: { id: 'G-8C3HBCJB3C' },
+      appName: 'https://trayvonnorthern.com',
+      pageTrackerScreenviewEnabled: true,
+      router,
+    })
     // if (isClient) {
     //   app.use(AOS.init({
     //     once: true,
