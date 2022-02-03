@@ -2,22 +2,27 @@
   <div class="main-container pt-36">
     <div class="text-center md:text-left">
       <h1 class="text-app-light-blue text-lg mb-2 uppercase">
-        Hello my name is Trayvon
+        Hello, my name is Trayvon
       </h1>
       <p class="text-5xl mb-2">
         I make and design websites.
       </p>
       <div class="text-xl mb-6">
         <p>
-          I'm a frontend developer co-founder of Codista, a software studio in Vienna.
+          I'm a fullstack JavaScript software developer, specializing in the modern latest and greatest technologies.
         </p>
         <p>
-          I also write about the web on my Biogand on Twitter.
+          I also write about the web and guide other developers to achieve their goals.
         </p>
       </div>
-      <a v-smooth-scroll href="#contact" class="border border-app-light-blue px-16 py-2.5 duration-150 text-xl rounded-md text-app-light-blue hover:(bg-gray-100 bg-opacity-10)">
-        Get in touch
-      </a>
+      <div class="flex gap-3">
+        <a v-smooth-scroll href="#contact" class="border border-app-light-blue px-16 py-2.5 duration-150 text-xl rounded-md text-app-light-blue hover:(bg-gray-100 bg-opacity-10)">
+          Get in touch
+        </a>
+        <router-link to="/resume" class="border border-app-light-blue px-16 py-2.5 duration-150 text-xl rounded-md text-app-light-blue hover:(bg-gray-100 bg-opacity-10)">
+          Resume
+        </router-link>
+      </div>
     </div>
   </div>
 </template>

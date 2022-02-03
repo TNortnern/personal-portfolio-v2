@@ -35,7 +35,7 @@ import { useActiveRoute } from '~/composables/useActiveRoute'
 import Globe from '~/components/icons/Globe.vue'
 import Learn from '~/components/icons/Learn.vue'
 import Brain from '~/components/icons/Brain.vue'
-import Design from '~/components/icons/Design.vue'
+// import Design from '~/components/icons/Design.vue'
 const { setActiveRoute } = useActiveRoute('services')
 interface CTA {
   text: string
@@ -51,7 +51,7 @@ interface ServiceItem {
 const serviceItems: ServiceItem[] = [
   {
     title: 'Website Development',
-    description: 'I provide a well-versed skill-set when it comes to website development, from building complex User Interfaces to writing expansive logic.',
+    description: 'I provide a well-versed skill-set when it comes to website development, from translating designs to webpages, building complex user interfaces, and writing expansive logic.',
     icon: Globe,
     iconClass: 'w-10 h-10',
   },

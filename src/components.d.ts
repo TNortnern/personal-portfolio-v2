@@ -25,6 +25,7 @@ declare module 'vue' {
     ProjectSwitch: typeof import('./components/portfolio/projects/ProjectSwitch.vue')['default']
     ProjectTop: typeof import('./components/portfolio/projects/ProjectTop.vue')['default']
     README: typeof import('./components/README.md')['default']
+    ResumeContent: typeof import('./components/resume/ResumeContent.vue')['default']
     SectionBlock: typeof import('./components/common/SectionBlock.vue')['default']
     SectionHeader: typeof import('./components/common/SectionHeader.vue')['default']
     Services: typeof import('./components/portfolio/services/Services.vue')['default']

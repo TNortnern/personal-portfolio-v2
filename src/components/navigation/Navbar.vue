@@ -6,22 +6,24 @@
       }"
     >
       <nav ref="navbar" class="main-container relative">
-        <div class="flex items-center justify-between relative">
-          <router-link to="/" class="flex items-center gap-2">
-            <img :class="isActive ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
-            <p>Trayvon Northern</p>
-          </router-link>
-          <MobileMenu />
-          <ul class="lg:(flex items-center gap-4) hidden">
-            <li v-for="route in routes" :key="route.text" class="group">
-              <a
-                v-smooth-scroll
-                :class="activeHash === route.href ? 'text-app-light-blue' : 'group-hover:text-app-light-blue'"
-                class="duration-150" :href="route.href"
-              >{{ route.text }}</a>
-            </li>
-          </ul>
-        </div>
+        <slot>
+          <div class="flex items-center justify-between relative">
+            <router-link to="/" class="flex items-center gap-2">
+              <img :class="isActive ? 'w-12 h-12' : 'w-14 h-14'" class="rounded-full duration-250" src="/avatar.png" alt="Trayvon Northern Face">
+              <p>Trayvon Northern</p>
+            </router-link>
+            <MobileMenu />
+            <ul class="lg:(flex items-center gap-4) hidden">
+              <li v-for="route in routes" :key="route.text" class="group">
+                <a
+                  v-smooth-scroll
+                  :class="activeHash === route.href ? 'text-app-light-blue' : 'group-hover:text-app-light-blue'"
+                  class="duration-150" :href="route.href"
+                >{{ route.text }}</a>
+              </li>
+            </ul>
+          </div>
+        </slot>
       </nav>
     </div>
   </div>
