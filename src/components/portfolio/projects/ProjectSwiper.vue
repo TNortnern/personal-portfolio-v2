@@ -31,8 +31,8 @@
     >
       <swiper-slide v-for="{ id, url, formats } in project?.media" :key="id">
         <picture>
-          <source media="(min-width:1024px)" :srcset="formats.large?.url">
-          <source media="(max-width:1023px)" :srcset="formats.medium?.url">
+          <source media="(min-width:1024px)" :srcset="formats?.large?.url">
+          <source media="(max-width:1023px)" :srcset="formats?.medium?.url">
           <!-- <source media="(max-width:480px)" :srcset="formats.thumbnail.url"> -->
           <img class="overflow-hidden" :src="url" :alt="project.title">
         </picture>
@@ -60,7 +60,7 @@ SwiperCore.use([Autoplay, Navigation])
 const route = useRoute()
 const store = useProjectStore()
 const projectIndex = computed(() => store.getProjectIndex(route.params.id.toString()))
-const project = computed(() => store.all[projectIndex.value])
+const project = computed(() => store.websiteProjects[projectIndex.value])
 </script>
 
 <style>

@@ -52,7 +52,7 @@ import { useProjectStore } from '~/stores/projects'
 const route = useRoute()
 const store = useProjectStore()
 const projectIndex = computed(() => store.getProjectIndex(route.params.id.toString()))
-const project = computed(() => store.all[projectIndex.value])
+const project = computed(() => store.websiteProjects[projectIndex.value])
 const topControls = ref<HTMLBodyElement | null>(null)
 </script>
 

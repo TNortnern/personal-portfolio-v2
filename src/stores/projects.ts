@@ -40,15 +40,18 @@ export const useProjectStore = defineStore({
   state: (): RootState => ({
     all: [],
     categories: [],
-    selectedCategory: 'all',
+    selectedCategory: 'website',
   }),
   getters: {
-    getProject: (state: RootState) => {
-      return (title: string) => state.all.find(p => p.title === title)
+    getProject() {
+      // this will only find projects that are websites/mobile apps
+      return (title: string) => this.websiteProjects.find(p => p.title === title)
     },
-    getProjectIndex: (state: RootState) => {
-      return (title: string) => state.all.findIndex(p => p.title === title)
+    getProjectIndex() {
+      // this will only find projects that are websites/mobile apps
+      return (title: string) => this.websiteProjects.findIndex(p => p.title === title)
     },
+    websiteProjects: (state: RootState) => state.all.filter(p => p.category.title.toLowerCase() === 'website'),
     allFiltered: (state: RootState) => {
       if (state.selectedCategory === 'all') return state.all
       return state.all.filter((p) => {

@@ -16,7 +16,7 @@
           'hover:(ring-2 ring-app-light-blue) duration-150': projectIndex !== 0
         }"
         v-bind="{
-          ...(projectIndex !== 0 && { to: `/projects/${store.all[projectIndex - 1].title}` })
+          ...(projectIndex !== 0 && { to: `/projects/${store.websiteProjects[projectIndex - 1].title}` })
         }"
         class="flex items-center px-2 py-1"
       >
@@ -25,18 +25,18 @@
           Previous
           <span
             class="hidden md:inline-block"
-          >{{ store.all[projectIndex - 1] && `(${store.all?.[projectIndex - 1].title})` }}</span>
+          >{{ store.websiteProjects[projectIndex - 1] && `(${store.websiteProjects?.[projectIndex - 1].title})` }}</span>
           <span class="md:hidden">Project</span>
         </p>
       </component>
       <component
-        :is="projectIndex !== store.all.length - 1 ? 'router-link' : 'div'"
+        :is="projectIndex !== store.websiteProjects.length - 1 ? 'router-link' : 'div'"
         :class="{
-          'pointer-events-none opacity-50': projectIndex === store.all.length - 1,
-          'hover:(ring-2 ring-app-light-blue) duration-150': projectIndex !== store.all.length - 1
+          'pointer-events-none opacity-50': projectIndex === store.websiteProjects.length - 1,
+          'hover:(ring-2 ring-app-light-blue) duration-150': projectIndex !== store.websiteProjects.length - 1
         }"
         v-bind="{
-          ...(projectIndex !== store.all.length - 1 && { to: `/projects/${store.all[projectIndex + 1].title}` })
+          ...(projectIndex !== store.websiteProjects.length - 1 && { to: `/projects/${store.websiteProjects[projectIndex + 1].title}` })
         }"
         class="flex items-center py-1 px-2"
       >
@@ -44,7 +44,7 @@
           Next
           <span
             class="hidden md:inline-block"
-          >{{ store.all[projectIndex + 1] && `(${store.all?.[projectIndex + 1].title})` }}</span>
+          >{{ store.websiteProjects[projectIndex + 1] && `(${store.websiteProjects?.[projectIndex + 1].title})` }}</span>
           <span class="md:hidden">Project</span>
         </p>
         <Chevron class="md:(w-8 h-8) w-5 h-5" />
@@ -59,5 +59,4 @@ import Chevron from '~/components/icons/Chevron.vue'
 const route = useRoute()
 const store = useProjectStore()
 const projectIndex = computed(() => store.getProjectIndex(route.params.id.toString()))
-
 </script>

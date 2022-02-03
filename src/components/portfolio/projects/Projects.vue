@@ -11,8 +11,9 @@
     title="My Works"
   >
     <div class="flex flex-wrap justify-center text-lg gap-6 mt-16">
+      <!-- Temporarily disabling all because I'm still thinking about the design and I don't want a million projects showing on the initial load -->
       <button
-        v-for="tab in tabs"
+        v-for="tab in tabs.filter((t) => t !== 'all')"
         :key="tab"
         class="rounded-full py-2.5 w-30 duration-150 capitalize"
         :data-filter="tab === 'all' ? 'all' : '.' + tab"
@@ -23,10 +24,15 @@
       </button>
     </div>
     <div class="mix-grid mt-8">
-      <router-link
+      <component
+        :is="project.category.title.toLowerCase() === 'website' ? 'router-link' : 'a'"
+        v-bind="{
+          ...project.category.title.toLowerCase() === 'website' && { to: `/projects/${project.title}` },
+          ...project.category.title.toLowerCase() !== 'website' && { href: project.hosted_url, target: '__blank' }
+        }"
         v-for="project of projectStore.all" :key="project.id"
-        :to="`/projects/${project.title}`" class="mix group bg-white shadow-2xl relative rounded-md overflow-hidden relative project-width"
-        :class="project.category.title.toLowerCase()"
+        class="mix group bg-white shadow-2xl relative rounded-md overflow-hidden relative project-width"
+        :class="[project.category.title.toLowerCase(), {'h-[18.5rem]': ['email', 'package'].includes(project.category.title.toLowerCase()) }]"
       >
         <img v-if="!loadedItems.includes(project.id)" :data-item-id="project.id" class="lozad loading-image overflow-hidden h-full w-full" src="/imgload.svg" alt="loading image">
         <picture v-else>
@@ -34,7 +40,7 @@
           <source media="(max-width:768px)" :srcset="project?.media?.[0]?.formats?.medium?.url">
           <source media="(max-width:480px)" :srcset="project?.media?.[0]?.formats?.small?.url">
           <img
-            :src="project?.media?.[0]?.url" class="overflow-hidden  w-full"
+            :src="project?.media?.[0]?.url" class="overflow-hidden h-full  w-full"
             :alt="project.title"
           >
         </picture>
@@ -47,7 +53,7 @@
             {{ project.title }}
           </h1>
         </div>
-      </router-link>
+      </component>
       <div class="project-width" />
     </div>
   </SectionBlock>
