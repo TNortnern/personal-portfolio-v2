@@ -30,6 +30,13 @@ export const createApp = ViteSSG(
     routes,
     base: import.meta.env.BASE_URL,
     scrollBehavior(to) {
+      if (to.path === '/resume') {
+        return {
+          top: 0,
+          left: 0,
+          // behavior: 'smooth',
+        }
+      }
       if (to.hash) {
         return new Promise((resolve) => {
           setTimeout(() => {
