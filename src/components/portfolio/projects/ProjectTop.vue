@@ -10,11 +10,7 @@
     <p class="text-app-light-blue mb-2 text-2xl md:text-3xl">
       Description
     </p>
-    <p class="text-sm lg:text-base">
-      {{
-        project?.description
-      }}
-    </p>
+    <p class="text-sm lg:text-base" v-html="project.description" />
     <div class="flex flex-wrap items-center gap-3 mt-6 text-sm lg:text-base border-b border-white pb-8">
       <p
         v-for="tech in project.technologies"

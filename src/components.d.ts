@@ -4,6 +4,8 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AboutHighlight: typeof import('./components/about/AboutHighlight.vue')['default']
+    AboutMain: typeof import('./components/about/AboutMain.vue')['default']
     AppFooter: typeof import('./components/footer/AppFooter.vue')['default']
     AppInput: typeof import('./components/common/AppInput.vue')['default']
     AppTextarea: typeof import('./components/common/AppTextarea.vue')['default']
