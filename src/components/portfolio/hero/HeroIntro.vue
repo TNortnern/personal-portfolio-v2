@@ -9,7 +9,7 @@
       </p>
       <div class="text-xl mb-6">
         <p>
-          I'm a fullstack JavaScript software developer, specializing in the modern latest and greatest technologies.
+          I'm a full-stack JavaScript software developer, specializing in the modern, latest, and greatest technologies.
         </p>
         <p>
           I also write about the web and guide other developers to achieve their goals.

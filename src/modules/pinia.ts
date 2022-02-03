@@ -1,8 +1,8 @@
 import { createPinia } from 'pinia'
 import type { UserModule } from '~/types'
 import { useProjectStore } from '~/stores/projects'
-import { useProjects } from '~/composables/useProjects'
 import { useRootStore } from '~/stores/root'
+import { useBlogStore } from '~/stores/blog'
 // Setup Pinia
 // https://pinia.esm.dev/
 export const install: UserModule = ({ initialState, app, router }) => {
@@ -19,12 +19,16 @@ export const install: UserModule = ({ initialState, app, router }) => {
 
   router.beforeEach(async(to, from, next) => {
     const projectStore = useProjectStore(pinia)
+    const blogStore = useBlogStore(pinia)
     const rootStore = useRootStore(pinia)
     if (!projectStore.all.length || !rootStore.dataLoaded) {
       // perform the (user-implemented) store action to fill the store's state
       await projectStore.initialize()
       await rootStore.initialize()
     }
+    if (!blogStore.all.length)
+      await blogStore.initialize()
+
     next()
   })
 }
