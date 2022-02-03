@@ -80,16 +80,13 @@ const tabs: Tab[] = [
 ]
 // weird type but it surpresses the ts warning..
 const loadedItems = ref<string[] | any[] | null[]>([])
-const initialize = useMixItUp('.mix-grid', {
+useMixItUp('.mix-grid', {
   animation: {
     animateResizeTargets: true,
   },
-})
-watch(() => initialize, (val: any) => {
-  // initalize mixer default value
-  val?.mixer.value.filter(projectStore.getActiveCategoryTab === 'all' ? 'all' : `.${projectStore.getActiveCategoryTab}`)
-}, {
-  deep: true,
+  load: {
+    filter: `.${projectStore.getActiveCategoryTab}`,
+  },
 })
 onMounted(async() => {
   const observer = lozad('.lozad', {

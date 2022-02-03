@@ -18,9 +18,7 @@
           <h5 class="text-2xl mb-5 text-app-light-blue">
             {{ title }}
           </h5>
-          <span class="text-gray-400 block">
-            {{ description }}
-          </span>
+          <span class="text-gray-400 block" v-html="description" />
         </div>
       </div>
     </div>
