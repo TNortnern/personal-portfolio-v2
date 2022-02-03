@@ -111,17 +111,11 @@ onMounted(async() => {
 }
 
 .mix-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  align-content: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
+  @apply flex flex-wrap content-start justify-center gap-4 lg:(justify-between);
 }
 
 .project-width {
-  @apply w-[47%] md:w-[48.8%] lg:w-[49%];
+  @apply w-[93%] md:w-[48.8%] lg:w-[49%];
 }
 
 </style>

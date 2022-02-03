@@ -21,6 +21,29 @@ import { useProjectStore } from '~/stores/projects'
 const route = useRoute()
 const store = useProjectStore()
 const projectIndex = computed(() => store.getProjectIndex(route.params.id.toString()))
+const project = computed(() => store.websiteProjects[projectIndex.value])
+useHead({
+  title: `Trayvon Northern - ${project.value.title}`,
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content: `${project.value.title}`,
+    },
+    {
+      name: 'og:description',
+      content: `${project.value.title}`,
+    },
+    {
+      name: 'og:title',
+      content: `Trayvon Northern - ${project.value.title}`,
+    },
+    {
+      name: 'og:image',
+      content: 'https://i.imgur.com/oWZZCSh.png',
+    },
+  ],
+})
 </script>
 
 <style scoped>
