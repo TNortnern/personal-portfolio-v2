@@ -75,7 +75,6 @@ const tabs: Tab[] = [
   'all',
   'website',
   'email',
-  'design',
   'package',
 ]
 // weird type but it surpresses the ts warning..
