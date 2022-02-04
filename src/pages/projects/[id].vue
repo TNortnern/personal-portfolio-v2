@@ -26,6 +26,10 @@ useHead({
   title: `Trayvon Northern - ${project.value.title}`,
   meta: [
     {
+      name: 'viewport',
+      context: 'width=device-width, initial-scale=1.0',
+    },
+    {
       hid: 'description',
       name: 'description',
       content: `${project.value.title}`,
