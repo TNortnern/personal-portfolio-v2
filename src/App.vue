@@ -6,6 +6,10 @@ useHead({
   title: 'Personal Portfolio - Trayvon Northern ',
   meta: [
     {
+      name: 'viewport',
+      context: 'width=device-width, initial-scale=1.0',
+    },
+    {
       hid: 'description',
       name: 'description',
       content:
