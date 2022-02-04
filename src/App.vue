@@ -7,7 +7,7 @@ useHead({
   meta: [
     {
       name: 'viewport',
-      context: 'width=device-width, initial-scale=1.0',
+      content: 'width=device-width, initial-scale=1.0',
     },
     {
       hid: 'description',
