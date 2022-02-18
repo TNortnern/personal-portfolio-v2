@@ -90,7 +90,7 @@ useMixItUp('.mix-grid', {
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 onMounted(async() => {
   const observer = lozad('.lozad', {
-    rootMargin: isLargeScreen ? '400px' : '150px',
+    rootMargin: isLargeScreen ? '400px' : '50px',
     threshold: 0.1,
     loaded(el: HTMLBaseElement) {
       const itemId: string | null = el.getAttribute('data-item-id')
