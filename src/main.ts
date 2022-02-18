@@ -38,6 +38,12 @@ export const createApp = ViteSSG(
           // behavior: 'smooth',
         }
       }
+      if (!to.hash) {
+        return {
+          top: 0,
+          left: 0,
+        }
+      }
       if (to.hash) {
         return new Promise((resolve) => {
           setTimeout(() => {
