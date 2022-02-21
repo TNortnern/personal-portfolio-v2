@@ -6,9 +6,6 @@ body,
   margin: 0;
   padding: 0;
 }
-html {
-  font-family: 'Quicksand', sans-serif;
-}
 
 html.dark {
   @apply bg-app-dark-blue;
@@ -77,13 +74,16 @@ html.dark {
   font-family: 'Quicksand';
   src: url('~/assets/font/Quicksand-Regular.ttf');
   font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Quicksand';
   src: url('~/assets/font/Quicksand-Bold.ttf');
   font-weight: 700;
+  font-display: swap;
 }
 
 html {
+  font-family: 'Quicksand', sans-serif;
   @apply bg-app-dark-blue;
 }
