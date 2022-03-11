@@ -54,6 +54,10 @@ const serviceItems: ServiceItem[] = [
     description: 'I provide a well-versed skill-set when it comes to website development, from translating designs to webpages, building complex user interfaces, and writing expansive logic.',
     icon: Globe,
     iconClass: 'w-10 h-10',
+     cta: {
+      text: 'See my work',
+      href: '#works',
+    },
   },
   {
     title: 'Tutoring',
@@ -67,7 +71,7 @@ const serviceItems: ServiceItem[] = [
   },
   {
     title: 'Consultation',
-    description: 'Every once awhile, you need someone to pass and bounce off ideas off of and also receive excellent insights. I can be that person.',
+    description: 'Every once awhile, you need someone to pass and bounce ideas off of and also receive some useful insights. I can be that person.',
     icon: Brain,
     iconClass: 'w-9 h-9',
     cta: {
