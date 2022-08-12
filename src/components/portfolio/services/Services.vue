@@ -54,7 +54,7 @@ const serviceItems: ServiceItem[] = [
     description: 'I provide a well-versed skill-set when it comes to website development, from translating designs to webpages, building complex user interfaces, and writing expansive logic.',
     icon: Globe,
     iconClass: 'w-10 h-10',
-     cta: {
+    cta: {
       text: 'See my work',
       href: '#works',
     },

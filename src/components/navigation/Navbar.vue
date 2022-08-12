@@ -47,6 +47,7 @@ if (typeof window !== 'undefined') {
       active.value = true
 
     else
+    //nah
       active.value = false
   })
 }
