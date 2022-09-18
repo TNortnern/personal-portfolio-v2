@@ -1,3 +1,3 @@
 ## Personal Portfolio
 
-<https://trayvonnorthern.com>
+<https://www.trayvonnorthern.com/>
