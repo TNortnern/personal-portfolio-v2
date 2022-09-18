@@ -114,5 +114,5 @@ onMounted(async() => {
 .project-width {
   @apply w-[93%] md:w-[48.8%] lg:w-[49%];
 }
-
+//
 </style>
