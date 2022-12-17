@@ -143,7 +143,7 @@ const sendEmail = async(form: ContactForm) => {
     genericForm.value.initializeForm()
   }, 600)
   try {
-    await axios.post('https://personalport-be.herokuapp.com/email', {
+    await axios.post('https://personal-portfolio-be.onrender.com/email', {
       subject: `Message from website by: ${form.name}`,
       from: 'foodeater563@outlook.com',
       to: emailBase,
