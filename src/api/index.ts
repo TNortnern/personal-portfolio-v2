@@ -1,5 +1,5 @@
 import axios from 'axios'
 const api = axios.create({
-  baseURL: 'https://personalport-be.herokuapp.com',
+  baseURL: 'https://personal-portfolio-be.onrender.com',
 })
 export default api
