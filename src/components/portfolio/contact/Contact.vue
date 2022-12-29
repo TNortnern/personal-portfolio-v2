@@ -160,6 +160,7 @@ const sendEmail = async(form: ContactForm) => {
     })
   }
   catch (error) {
+    //
     console.error('error', error)
   }
 }
