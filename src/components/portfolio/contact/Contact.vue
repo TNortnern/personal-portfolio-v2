@@ -143,7 +143,7 @@ const sendEmail = async(form: ContactForm) => {
     genericForm.value.initializeForm()
   }, 600)
   try {
-    await axios.post('https://personal-portfolio-be.onrender.com/email', {
+    await axios.post('https://pear-puffer-garb.cyclic.app/mail', {
       subject: `Message from website by: ${form.name}`,
       from: 'foodeater563@outlook.com',
       to: emailBase,
@@ -160,6 +160,7 @@ const sendEmail = async(form: ContactForm) => {
     })
   }
   catch (error) {
+    //
     console.error('error', error)
   }
 }
