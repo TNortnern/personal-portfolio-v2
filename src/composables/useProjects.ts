@@ -15,7 +15,7 @@ export function useProjects() {
       const { toggleAppLoading } = useRootStore()
       toggleAppLoading(true)
       try {
-        const { data }: AxiosResponse = await axios.get('https://personal-portfolio-be.onrender.com/projects?isActive=true')
+        const { data }: AxiosResponse = await axios.get('https://personal-portfolio-be.onrender.com/projects?isActive=true&_sort=importance:DESC')
         request.data = data
       }
       catch (err: AxiosError | unknown) {
