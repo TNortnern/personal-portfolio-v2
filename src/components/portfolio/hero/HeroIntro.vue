@@ -19,9 +19,9 @@
         <a v-smooth-scroll href="#contact" class="hero-button">
           Get in touch
         </a>
-        <router-link to="/resume" class="hero-button">
+        <a target="_blank" href="https://docs.google.com/document/d/17a9g3jhNhzMBEcBiv-Qy9qQufPvclU3GDl7yiUWEP00/edit#" class="hero-button">
           Resume
-        </router-link>
+        </a>
       </div>
     </div>
   </div>
