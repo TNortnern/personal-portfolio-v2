@@ -16,6 +16,7 @@ export function useProjects() {
       toggleAppLoading(true)
       try {
         const { data }: AxiosResponse = await api.get('/getProjects')
+        //
         request.data = data
       }
       catch (err: AxiosError | unknown) {
